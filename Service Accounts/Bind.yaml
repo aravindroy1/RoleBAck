@@ -1,0 +1,17 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: sa-binding
+  namespace: team3-ns
+subjects:
+- kind: Group
+  name: development   # 👈 from certificate (O=development)
+  apiGroup: rbac.authorization.k8s.io
+
+- kind: SericeAccount
+  name: aravind-sa
+
+roleRef:
+  kind: Role
+  name: dev-role
+  apiGroup: rbac.authorization.k8s.io
