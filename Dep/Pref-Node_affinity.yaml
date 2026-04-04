@@ -15,12 +15,13 @@ spec:
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: env
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key: aravind
                 operator: In
                 values:
-                - prod
+                - dev
       containers:
       - name: pref-Node-flower-container
         image: nginx
