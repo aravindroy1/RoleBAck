@@ -1,0 +1,5 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sNoDefaultNS
+metadata:
+  name: block-default-ns
+spec: {}
