@@ -5,11 +5,7 @@ metadata:
   namespace: aravind-ns
 spec:
   replicas: 2
-  tolerations:
-    - key: "env"
-      operator: "Equal"
-      value: "dev"
-      effect: "NoSchedule"
+  
   selector:
     matchLabels:
       app: aravind-app
@@ -18,9 +14,14 @@ spec:
       labels:
         app: aravind-app
     spec: 
+      tolerations:
+        - key: "env"
+          operator: "Equal"
+          value: "dev"
+          effect: "NoSchedule"
       containers:
         - name: flower-cont 
           image: aravindroy1/flower-img:latest
           ports:
             - containerPort: 3015
-          
+            
