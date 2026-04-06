@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: aravind-dep 
-  namespace: aravind-ns
+  
 spec:
   replicas: 4
   
